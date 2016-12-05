@@ -8,3 +8,5 @@ export LoginSuccess from './LoginSuccess/LoginSuccess';
 export Survey from './Survey/Survey';
 export NotFound from './NotFound/NotFound';
 export Pagination from './Pagination/Pagination';
+export { OrderWrapper as Order } from './Order/Order';
+export ProductList from './ProductList/ProductList';

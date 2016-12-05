@@ -9,6 +9,19 @@ import counter from './counter';
 import {reducer as form} from 'redux-form';
 import info from './info';
 import widgets from './widgets';
+import {
+  orderProducts,
+/* eslint camelcase: 0 */
+  productId_quantity,
+  processingOrder,
+  serverResponse,
+} from './order';
+import {
+  cart,
+  products,
+  productsLoadOffset,
+} from './product_list';
+// import cart from './cart';
 
 export default combineReducers({
   routing: routerReducer,
@@ -22,5 +35,12 @@ export default combineReducers({
   }),
   info,
   pagination,
-  widgets
+  widgets,
+  // order reducers
+  orderProducts,
+  productId_quantity,
+  processingOrder,
+  serverResponse,
+  // productList,
+  // cart,
 });
