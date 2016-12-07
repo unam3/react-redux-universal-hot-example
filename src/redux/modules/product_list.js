@@ -114,7 +114,7 @@ export const actions = {
 };
 
 // reducers
-export const cart = require('./cart');
+export const cart = require('./cart').default;
 
 export const products = function (state = 'silly bastards', action) {
   switch (action.type) {

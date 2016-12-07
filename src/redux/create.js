@@ -3,6 +3,7 @@ import createMiddleware from './middleware/clientMiddleware';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import Immutable from 'immutable';
+const { stored } = require('../components/Cart/Cart');
 
 export default function createStore(history, client, data) {
   // Sync dispatched route actions to the history
@@ -27,7 +28,16 @@ export default function createStore(history, client, data) {
   if (data) {
     data.pagination = Immutable.fromJS(data.pagination);
   }
-  const store = finalCreateStore(reducer, data);
+
+  const composedData = {
+    cart: stored,
+    products: [],
+    productsLoadOffset: 0,
+    ...data
+  };
+  console.log('data', data);
+
+  const store = finalCreateStore(reducer, composedData);
 
 
   if (__DEVELOPMENT__ && module.hot) {

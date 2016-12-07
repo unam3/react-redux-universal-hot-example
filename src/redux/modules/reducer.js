@@ -42,5 +42,8 @@ export default combineReducers({
   processingOrder,
   serverResponse,
   // productList,
+  cart,
+  products,
+  productsLoadOffset,
   // cart,
 });

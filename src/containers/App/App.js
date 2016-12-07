@@ -26,20 +26,6 @@ import { asyncConnect } from 'redux-async-connect';
     if (!isAuthLoaded(getState())) {
       promises.push(dispatch(loadAuth()));
     }
-    //if (!orderProducts(getState())) {
-    //  promises.push(dispatch(loadAuth()));
-    //}
-    //orderProducts(getState());
-
-    //console.log(getState());
-
-    console.log('products', products);
-
-    promises.push((...args) => {
-      console.log('promise args', args);
-      dispatch(actions.showMore());
-      dispatch(actions.fetchProducts(props));
-    });
 
     return Promise.all(promises);
   }
