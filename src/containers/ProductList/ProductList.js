@@ -3,42 +3,10 @@ const { render } = require('react-dom');
 const { connect, Provider } = require('react-redux');
 const Redux = require('redux');
 const allProducts = require('../../helpers/products.js');
-const Filters = require('../../components/Filters/Filters');
-const ProductTable = require('../../components/ProductTable/ProductTable');
-const BlueButton = require('../../components/BlueButton/BlueButton');
-const { Ring } = require('../../components/Ring/Ring');
 const { stored } = require('../../components/Cart/Cart');
+const ProductList = require('../../components/ProductList/ProductList');
 
 const productsCategory = Object.keys(allProducts)[0];
-
-//const ProductList = function (...args) {
-//  console.log(args);
-//  return <h1>asdf</h1>;
-const ProductList = function ({
-  products,
-  productsLoadOffset,
-  onShowMoreProducts,
-  cart,
-  onAddToCart
-}) {
-  // ~ componentDidMount
-  if (!products || (products.length === 0 && productsLoadOffset === 0)) {
-    onShowMoreProducts();
-  }
-
-  return products && products.length ? (
-    <div className="product-list main__product-list flex-row">
-      <Filters products={products} />
-      {/*
-      <ProductTable products={products}
-        productsCategory={productsCategory}
-        cart={cart}
-        onAddToCart={onAddToCart}
-        onShowMoreProducts={onShowMoreProducts}
-        />
-      */}
-    </div>) : (<Ring />);
-};
 
 // const store = Redux.createStore(
 //   require('../../redux/modules/product_list.js'),
