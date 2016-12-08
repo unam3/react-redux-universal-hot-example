@@ -3,7 +3,7 @@ import createMiddleware from './middleware/clientMiddleware';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import Immutable from 'immutable';
-const { stored } = require('../components/Cart/Cart');
+import { stored } from '../components/Cart/Cart';
 
 export default function createStore(history, client, data) {
   // Sync dispatched route actions to the history

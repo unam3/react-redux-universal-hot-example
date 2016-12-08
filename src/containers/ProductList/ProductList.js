@@ -38,23 +38,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ProductList);
-
-//    ConCart = connect(
-//      ({cart}) => ({cart})
-//    )(Cart.component);
-//
-//render(
-//  <Provider store={store}>
-//    <ConProductList />
-//  </Provider>,
-//
-//  document.getElementById("main")
-//);
-//
-//render(
-//  <Provider store={store}>
-//    <ConCart />
-//  </Provider>,
-//
-//  document.getElementById("cart")
-//);

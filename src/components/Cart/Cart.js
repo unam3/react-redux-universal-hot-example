@@ -1,29 +1,34 @@
 const React = require('react');
+const { connect } = require('react-redux');
 
-module.exports = {
-  component ({cart}) {
-    const productsCount = Object.keys(cart).length;
-
-    return (<div className="cart blue-text">
+const Cart = ({cart}) => {
+  const productsCount = Object.keys(cart).length;
+  return (
+    <div className="cart blue-text">
       { productsCount ? (
-          <a className="blue-text" href="#">
-            {'В корзине ' + productsCount + ' товаров'}
-          </a>) : 'Корзина пуста'
+        <a className="blue-text" href="#">
+          {'В корзине ' + productsCount + ' товаров'}
+        </a>) : 'Корзина пуста'
       }
-      </div>);
-  },
+    </div>
+  );
+};
 
-  // для эмуляции десяти позиций в корзине
-  'stored': {
-    'b3d': true,
-    'dbb': true,
-    'bda': true,
-    '1bd': true,
-    '5f3': true,
-    'd61': true,
-    'h3f': true,
-    '5bb': true,
-    'cba': true,
-    'l5c': true
-  }
+//export const component ({cart}) {
+export const ConnectedCart = connect(
+  ({cart}) => ({cart})
+)(Cart);
+
+// для эмуляции десяти позиций в корзине
+export const stored = {
+  'b3d': true,
+  'dbb': true,
+  'bda': true,
+  '1bd': true,
+  '5f3': true,
+  'd61': true,
+  'h3f': true,
+  '5bb': true,
+  'cba': true,
+  'l5c': true
 };
