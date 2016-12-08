@@ -1,9 +1,10 @@
 const React = require('react');
 
 export const Ring = () => {
-  const s = require('./Ring.scss');
+  require('./Ring.css');
   return (
-  <div className={ s['uil-ring-css'] }>
+  <div className="uil-ring-css">
     <div />
-  </div>);
+  </div>
+);
 };
