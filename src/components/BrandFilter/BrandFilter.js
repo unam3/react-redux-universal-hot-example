@@ -1,5 +1,5 @@
 const React = require('react');
-const Filter = require('../Filter/Filter');
+import { Filter } from '../Filter/Filter';
 
 export const BrandFilter = function ({products}) {
   const brandsObj = {};

@@ -1,12 +1,13 @@
 export const actions = {
   showMore (action) {
-    console.log('asm');
+    console.log('showMore');
     return {
       type: 'show_more',
     };
   },
 
   requestProducts (dispatch, getState) {
+    console.log('requestProducts');
     return {
       type: 'request_products'
     };
@@ -90,6 +91,7 @@ export const actions = {
 
     const offsetEnd = state().productsLoadOffset;
 
+    console.log('receiveProducts');
     return {
       type: 'receive_products',
       payload: {
@@ -99,6 +101,7 @@ export const actions = {
   },
 
   fetchProducts (action) {
+    console.log('fetchProducts');
     return (dispatch, getState) => {
       console.log('afp inner');
       dispatch(this.requestProducts(dispatch, getState));

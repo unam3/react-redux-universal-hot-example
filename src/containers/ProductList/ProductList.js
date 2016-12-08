@@ -2,8 +2,8 @@ const React = require('react');
 const { render } = require('react-dom');
 const { connect, Provider } = require('react-redux');
 const Redux = require('redux');
-const allProducts = require('../../helpers/products.js');
 const ProductList = require('../../components/ProductList/ProductList');
+const allProducts = require('../../helpers/products.js');
 
 const productsCategory = Object.keys(allProducts)[0];
 
@@ -19,7 +19,11 @@ const { addToCart } = require('../../redux/modules/cart.js');
 const pl_actions = require('../../redux/modules/product_list.js').actions;
 
 const mapDispatchToProps = (dispatch) => ({
-  onAddToCart: (props) => dispatch(addToCart(props)),
+  onAddToCart: (props) => {
+    console.log('oATC');
+    console.log(props);
+    return dispatch(addToCart(props));
+  },
 
   onShowMoreProducts: (...props) => {
     console.log('oSMP');

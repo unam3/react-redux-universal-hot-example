@@ -1,5 +1,5 @@
 const React = require('react');
-const BlueButton = require('../BlueButton/BlueButton');
+import BlueButton from '../BlueButton/BlueButton';
 
 export const Product = ({brand, name, cost, cart, id, onAddToCart}) => (
   <div className="product product-list__product flex-column">

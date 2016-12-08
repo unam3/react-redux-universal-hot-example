@@ -1,8 +1,11 @@
 const React = require('react');
-const CostFilter = require('../CostFilter/CostFilter');
-const BrandFilter = require('../BrandFilter/BrandFilter');
+import { CostFilter } from '../CostFilter/CostFilter';
+import { BrandFilter } from '../BrandFilter/BrandFilter';
 
 export const Filters = ({products}) => (
+  //<code>
+  //  { JSON.stringify(products) }
+  //</code>
   <section className="filters product-list__filters flex-column">
     <CostFilter products={products} />
     <BrandFilter products={products} />

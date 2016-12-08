@@ -18,7 +18,7 @@ module.exports = Object.assign({
     title: 'Oshop',
     description: 'All the modern best practices in one example.',
     head: {
-      titleTemplate: 'Oshop: %s',
+      titleTemplate: '%s',
       meta: [
         {name: 'description', content: 'All the modern best practices in one example.'},
         {charset: 'utf-8'},

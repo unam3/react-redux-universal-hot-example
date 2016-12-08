@@ -1,5 +1,5 @@
 const React = require('react');
-const Filter = require('../Filter/Filter');
+import { Filter } from '../Filter/Filter';
 
 export const CostFilter = function () {
   // можно с reduce пройти в начале по всем элементам, найти min/max и

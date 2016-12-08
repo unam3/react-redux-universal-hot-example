@@ -1,6 +1,6 @@
 const React = require('react');
-const Product = require('../Product/Product');
-const ShowMoreProducts = require('../ShowMoreProducts/ShowMoreProducts');
+import { Product } from '../Product/Product';
+import { ShowMoreProducts } from '../ShowMoreProducts/ShowMoreProducts';
 
 export const ProductTable = ({
   productsCategory,
