@@ -73,13 +73,11 @@ const initialState = {
   serverResponse: false
 };
 
-export const orderProducts = (state = initialState.orderProducts, action) => (
-  'fuck'
-);
 //export const orderProducts = (state = initialState.orderProducts, action) => (
-//  (action.type === 'delete_from_order') ?
-//    deleteFromOrder(state, action) : state
-//);
+export const orderProducts = (state = [], action) => (
+  (action.type === 'delete_from_order') ?
+    deleteFromOrder(state, action) : state
+);
 
 const changeQuantity = function (
   state = {},
@@ -94,7 +92,8 @@ const changeQuantity = function (
 
 /* eslint camelcase: 0 */
 export const productId_quantity = function (
-  state = initialState.productId_quantity,
+  //state = initialState.productId_quantity,
+  state = {},
   action
 ) {
   switch (action.type) {

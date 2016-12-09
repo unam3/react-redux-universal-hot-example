@@ -8,9 +8,6 @@ import NavItem from 'react-bootstrap/lib/NavItem';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import orderProducts from 'redux/modules/order.js';
-import products from 'redux/modules/product_list.js';
-const { actions } = require('../../redux/modules/product_list.js');
 import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from '../../config';
@@ -91,9 +88,7 @@ export default class App extends Component {
                 <NavItem >Товары</NavItem>
               </LinkContainer>
 
-              {/* <Provider store={store}> */}
-                <ConnectedCart />
-              {/*</Provider> */}
+              <ConnectedCart />
             </Nav>
           </Navbar.Collapse>
         </Navbar>

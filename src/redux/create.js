@@ -30,15 +30,44 @@ export default function createStore(history, client, data) {
   }
 
   const composedData = {
+    // product_list
     cart: stored,
     products: [],
     productsLoadOffset: 0,
+    // "модуль" order имеет initialState объект
+    // product.id только хранить. тянуть с сервака все остальное
+    orderProducts: [
+      {
+        'id': '1f3',
+        'name': 'Gel',
+        'cost': 6600,
+        'brand': 'Asics'
+      },
+      {
+        'id': 'a3d',
+        'name': 'Wave',
+        'cost': 5520,
+        'brand': 'Mizuno'
+      },
+      {
+        'id': 'd2b',
+        'name': 'Del Mar',
+        'cost': 4930,
+        'brand': 'Zoot'
+      }
+    ],
+    productId_quantity: {
+      '1f3': 1,
+      'a3d': 1,
+      'd2b': 1
+    },
+    processingOrder: false,
+    serverResponse: false,
     ...data
   };
-  console.log('data', data);
+  // console.log('data', data);
 
   const store = finalCreateStore(reducer, composedData);
-
 
   if (__DEVELOPMENT__ && module.hot) {
     module.hot.accept('./modules/reducer', () => {
