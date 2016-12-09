@@ -3,7 +3,7 @@ import createMiddleware from './middleware/clientMiddleware';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import Immutable from 'immutable';
-import { stored } from '../components/Cart/Cart';
+import { initialState as cart } from './modules/cart.js';
 
 export default function createStore(history, client, data) {
   // Sync dispatched route actions to the history
@@ -31,7 +31,7 @@ export default function createStore(history, client, data) {
 
   const composedData = {
     // product_list
-    cart: stored,
+    cart: cart,
     products: [],
     productsLoadOffset: 0,
     // "модуль" order имеет initialState объект
