@@ -21,8 +21,9 @@ export default function ({
   );
 
   console.log(processingOrder, serverResponse);
+  console.log(JSON.stringify(orderProducts, false, 2), orderProducts.some((l) => l === null));
 
-  if (orderProducts.some((l) => l === null)) {
+  if (orderProducts.every((l) => l === null)) {
     redirect('cart');
 
     return <OrderInfo text="В форме заказа нет товаров. Перемещаемся в корзину для составления нового заказа" />;
