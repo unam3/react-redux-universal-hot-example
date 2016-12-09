@@ -13,7 +13,6 @@ import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
 import { ConnectedCart } from '../../components/Cart/Cart.js';
-import {Provider} from 'react-redux';
 
 
 @asyncConnect([{

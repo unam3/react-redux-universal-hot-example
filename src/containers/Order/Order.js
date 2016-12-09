@@ -1,8 +1,5 @@
-const React = require('react');
-// const {connect, Provider} = require('react-redux');
 const { connect } = require('react-redux');
 // const styles = require('../containers/Order/Order.css');
-// const Cart = require('../../components/cart.js');
 const OrderWrapper = require('../../components/OrderWrapper/OrderWrapper.js');
 
 const {
