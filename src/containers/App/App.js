@@ -8,7 +8,6 @@ import NavItem from 'react-bootstrap/lib/NavItem';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
@@ -67,35 +66,24 @@ export default class App extends Component {
       <div className={styles.app}>
         <Helmet {...config.app.head}/>
         <Navbar fixedTop>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <IndexLink to="/"
-                activeStyle={{color: '#0000ff', paddingLeft: '15px'}}>
-                {config.app.title}
-              </IndexLink>
-            </Navbar.Brand>
-            <Navbar.Toggle/>
-          </Navbar.Header>
-
           <Navbar.Collapse eventKey={0}>
             <Nav navbar>
-
-              <LinkContainer to="/order">
-                <NavItem >Оформление заказа</NavItem>
+              <NavItem >Раздел 1</NavItem>
+              <NavItem >Раздел 2</NavItem>
+              <NavItem >Раздел 3</NavItem>
+              <NavItem >Раздел 4</NavItem>
+              {/*
+              <LinkContainer to="">
+                <NavItem >Раздел 4</NavItem>
               </LinkContainer>
-              <LinkContainer to="/product_list">
-                <NavItem >Товары</NavItem>
-              </LinkContainer>
-
+              */}
               <ConnectedCart />
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
         <div className={styles.appContent}>
           {this.props.children}
         </div>
-        <InfoBar/>
       </div>
     );
   }

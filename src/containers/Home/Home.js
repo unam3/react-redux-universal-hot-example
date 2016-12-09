@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
 import { GithubButton } from 'components';
 import Helmet from 'react-helmet';
 
@@ -47,7 +47,11 @@ export default function() {
         </p>
 
         <h2>Сверстанные страницы</h2>
-        <h3>Список товаров</h3>
+        <h3>
+          <Link to="/product_list">
+            Список товаров
+          </Link>
+        </h3>
         <ol>
           <li>
             Подгрузка товаров на условном ajax (setTimeout).
@@ -56,7 +60,11 @@ export default function() {
             Добавление в корзину и изменение количества товаров в блоке корзины без перезагрузки страницы.
           </li>
         </ol>
-        <h3>Оформление заказа (в оригинале задания "Корзина")</h3>
+        <h3>
+          <Link to="/order">
+            Оформление заказа (в оригинале задания "Корзина")
+          </Link>
+        </h3>
         <ol>
           <li>
             Обработка формы с вариацией полей (все поля обязательны). (setTimeout)
